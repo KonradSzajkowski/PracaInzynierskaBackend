@@ -1,0 +1,57 @@
+'use strict'
+
+module.exports = (sequelize,Sequelize) =>{
+    return sequelize.define("RePosition" ,{
+            id:{
+                type:Sequelize.UUID(),
+                allowNull:false,
+                defaultValue:Sequelize.UUIDV4(),
+                primaryKey:true
+            },
+            salesDate:{
+                type:Sequelize.DATEONLY(),
+                allowNull:false
+            },
+            documentDate:{
+                type:Sequelize.DATEONLY(),
+                allowNull:false
+            },
+            document:{
+                type:Sequelize.STRING(50),
+                allowNull:false
+            },
+            tax20:{
+                type:Sequelize.FLOAT(),
+                allowNull:true
+            },
+            tax17:{
+                type:Sequelize.FLOAT(),
+                allowNull:true
+            },
+            tax8_5:{
+                type:Sequelize.FLOAT(),
+                allowNull:true
+            },
+            tax5_5:{
+                type:Sequelize.FLOAT(),
+                allowNull:true
+            },
+            tax3:{
+                type:Sequelize.FLOAT(),
+                allowNull:true
+            },
+            tax10:{
+                type:Sequelize.FLOAT(),
+                allowNull:true
+            },
+            comments:{
+                type:Sequelize.STRING(),
+                allowNull:true
+            }
+        },
+        {
+            timestamps:false,
+            tableName:"RePositions"  
+        }
+    )
+}
